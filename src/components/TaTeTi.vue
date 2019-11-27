@@ -5,8 +5,8 @@
       <div v-for="(n, fila) in 3" :key="n">
 
         <celda
-          @click="realizaMovimiento(fila, columna)"
-          :ficha="tablero.celdas[fila][columna]"
+          v-on:click="realizaMovimiento(fila, columna)"
+          v-bind:ficha="tablero.celdas[fila][columna]"
         ></celda>
       </div>
     </div>

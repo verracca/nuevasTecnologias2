@@ -15,8 +15,6 @@
             class="btn btn-secondary"
             v-on:click="eleccion(2)">
           </button>
-        
-      
           <button
             id="tijeras"
             flavour="button"
@@ -30,7 +28,7 @@
           Maquina: {{contadorMaquina}}
           </div>
         <div>{{ResultadoFinal}}</div>
-        <div v-if= "this.tateti==true"> 
+        <div v-if="this.tateti"> 
            <!-- TATETI -->
           <div id="tablero">
             <div>
@@ -39,7 +37,7 @@
           </div>
         </div>
         </div>
-        <div class="col-sm" v-if="this.tateti==false">
+        <div class="col-sm" v-if="!this.tateti">
           <button
             flavour="button"
             class="btn btn-secondary"
