@@ -37,7 +37,7 @@ export default {
         // Movimiento invalido
         return;
       }
-      this.$forceUpdate();
+   
       if (this.tablero.juegoTerminado()) {
         this.juegoTerminado = true;
         this.mensajeFinal = this.tablero.jugadorTiene3EnLinea("x")

@@ -1,8 +1,6 @@
 <template>
-<!-- PPT -->
   <div id="app"> 
     <div>
-    <!--<img alt="Vue logo" src="./assets/logo.png">-->
     <PiedraPapelTijera msg="Piedra papel o tijeras"/>
     </div>
 </div>
