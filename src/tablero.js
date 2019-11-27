@@ -7,35 +7,35 @@ export default class tablero {
         ];
     }
 
-    modificarTablero(x, y, jugador) {
+    modificarTablero(x, y, ficha) {
         if (this.celdas[x][y] !== '') {
             return false;
         }
 
-        this.celdas[x][y] = jugador;
+        this.celdas[x][y] = ficha;
         return true;
     }
 
-    jugadorTiene3EnLinea(jugador) {
+    jugadorTiene3EnLinea(ficha) {
         // Filas 
         for (let i = 0; i < 3; i++) {
-            if (this.celdas[0][i] === jugador && this.celdas[1][i] === jugador && this.celdas[2][i] === jugador) {
+            if (this.celdas[0][i] === ficha && this.celdas[1][i] === ficha && this.celdas[2][i] === ficha) {
                 return true;
             }
         }
 
         // Columnas
         for (let i = 0; i < 3; i++) {
-            if (this.celdas[i][0] === jugador && this.celdas[i][1] === jugador && this.celdas[i][2] === jugador) {
+            if (this.celdas[i][0] === ficha && this.celdas[i][1] === ficha && this.celdas[i][2] === ficha) {
                 return true;
             }
         }
 
         // Diagonales
-        if (this.celdas[0][0] === jugador && this.celdas[1][1] === jugador && this.celdas[2][2] === jugador) {
+        if (this.celdas[0][0] === ficha && this.celdas[1][1] === ficha && this.celdas[2][2] === ficha) {
             return true;
         }
-        if (this.celdas[2][0] === jugador && this.celdas[1][1] === jugador && this.celdas[0][2] === jugador) {
+        if (this.celdas[2][0] === ficha && this.celdas[1][1] === ficha && this.celdas[0][2] === ficha) {
             return true;
         }
 
