@@ -6,7 +6,8 @@ import Celda from '../src/components/Celda.vue';
 Vue.component('tateti', TaTeTi);
 Vue.component('celda', Celda);
 
+Vue.config.productionTip = false
+
 new Vue({
-  el: '#app',
-  render: h => h(App)
-});
+  render: h => h(App),
+}).$mount('#app')
