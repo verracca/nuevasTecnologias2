@@ -5,8 +5,8 @@
       <div v-for="(n, fila) in 3" :key="n">
 
         <celda
-          v-on:click="realizaMovimiento(fila, columna)"
-          v-bind:ficha="tablero.celdas[fila][columna]"
+          @click="realizaMovimiento(fila, columna)"
+          :ficha="tablero.celdas[fila][columna]"
         ></celda>
       </div>
     </div>
@@ -37,7 +37,7 @@ export default {
         // Movimiento invalido
         return;
       }
-   
+      this.$forceUpdate();
       if (this.tablero.juegoTerminado()) {
         this.juegoTerminado = true;
         this.mensajeFinal = this.tablero.jugadorTiene3EnLinea("x")

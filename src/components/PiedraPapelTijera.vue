@@ -15,6 +15,8 @@
             class="btn btn-secondary"
             v-on:click="eleccion(2)">
           </button>
+        
+      
           <button
             id="tijeras"
             flavour="button"
@@ -23,12 +25,12 @@
           </button>
         </div>
         <div>{{Resultado}}</div>
-        <div>
+        <div id="TEMA-RESULTADOS">
           User: {{contadorUser}}
           Maquina: {{contadorMaquina}}
           </div>
         <div>{{ResultadoFinal}}</div>
-        <div v-if="this.tateti"> 
+        <div v-if= "this.tateti==true"> 
            <!-- TATETI -->
           <div id="tablero">
             <div>
@@ -37,10 +39,10 @@
           </div>
         </div>
         </div>
-        <div class="col-sm" v-if="!this.tateti">
+        <div class="col-sm" v-if="this.tateti==false">
           <button
             flavour="button"
-            class="btn btn-secondary"
+            class="btn btn-secondary reiniciar"
             v-on:click="reiniciar()">
             Reiniciar Partida
           </button>
@@ -68,43 +70,62 @@ export default {
   methods: {
     eleccion(valor){
         this.random = Math.floor(Math.random() * 4);
-        if(valor==1){
-          if(this.random==3){
+        switch(valor){
+         case 1:
+          switch(this.random){
+           case 3:
             this.Resultado='Ganaste, la maquina eligió Tijera';
             this.contadorUser++;
             this.chequearPartida();
-          }else if(this.random==2){
+             break;
+            case 2:
             this.Resultado='Perdiste, la maquina eligió Papel';
             this.contadorMaquina++;
             this.chequearPartida();
-          }else{
-            this.Resultado='Empataron';
+            break;
+            default:
+              this.Resultado='Empataron';
           }
-        }else if(valor==2){
-          if(this.random==1){
+          break;
+          case 2:
+          switch(this.random){
+            case 1:
             this.Resultado='Ganaste, la maquina eligió Piedra';
             this.contadorUser++;
             this.chequearPartida();
-          }else if(this.random==3){
-            this.Resultado='Perdiste, la maquina eligió Tijera';
+            break;
+            case 3:
+               this.Resultado='Perdiste, la maquina eligió Tijera';
             this.contadorMaquina++;
             this.chequearPartida();
-          }else{
+            break;
+            default: 
             this.Resultado='Empataron';
           }
-        }else {
-          if(this.random==2){
+          break;
+
+          case 3:
+            switch(this.random){
+            case 2:
             this.Resultado='Ganaste, la maquina eligió Papel';
             this.contadorUser++;
             this.chequearPartida();
-          }else if(this.random==1){
+              break;
+
+            case 1:
             this.Resultado='Perdiste, la maquina eligió Piedra';
             this.contadorMaquina++;
             this.chequearPartida();
-          }else{
+              break;
+
+            default:
             this.Resultado='Empataron';
-          }
-        }
+
+            }
+            break;
+            default: this.chequearPartida();
+            
+       }
     },
     reiniciar(){
           this.Resultado='',
@@ -161,5 +182,19 @@ width:160px;
  color:white;
  border: none;
  outline:none;
+}
+.row{
+  margin-top: 250px;
+}
+.btn{
+  margin: 0px 100px;
+}
+
+.reiniciar{
+  margin-top:30px;
+}
+
+#TEMA-RESULTADOS{
+font-size:50px;
 }
 </style>
