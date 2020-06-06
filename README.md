@@ -1,4 +1,8 @@
-# tpnuevastecnologias
+# Trabajo Practico VueJS (Nuevas Tecnologias 2, ORT)
+
+Juego Piedra Papel Tijera + TATETI
+
+[Presentacion](https://docs.google.com/presentation/d/18gW2BLozBY9NVpz7KvwCnjjecqpjWb_26IB4tgGL3_s/edit?usp=sharing)
 
 ## Project setup
 ```
